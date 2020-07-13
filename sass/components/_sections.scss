@@ -1,0 +1,225 @@
+.section {
+  padding: 4rem 0;
+
+  svg {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+}
+
+.projects,
+.pricing,
+.testimonials,
+.partners,
+.team {
+  background: rgba($secondary-color, 0.1);
+}
+
+.hero {
+  color: white;
+  background-image: linear-gradient(
+      rgba($secondary-color, 0.6),
+      rgba($secondary-color, 0.6)
+    ),
+    url(/assets/images/hero-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+
+  .hero-left {
+    margin-bottom: 3rem;
+
+    svg {
+      width: 120px;
+      animation: roll-in-left 0.6s ease-out both;
+      // -webkit-animation: roll-in-left 0.6s ease-out both;
+    }
+  }
+
+  * {
+    color: inherit;
+  }
+
+  .hero-buttons {
+    display: flex;
+    margin-top: 1.5rem;
+  }
+
+  .demo {
+    margin-right: 1rem;
+    color: white;
+    font-weight: 500;
+    background: $color-black;
+  }
+
+  .sign {
+    font-weight: 500;
+    color: $secondary-color;
+    background: $primary-color;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+
+    .hero-right p {
+      width: 70%;
+    }
+  }
+}
+
+.about {
+  color: $secondary-color;
+  background: $primary-color;
+  p:first-of-type {
+    margin-bottom: 1rem;
+  }
+
+  .about-copy {
+    margin-bottom: 3rem;
+  }
+}
+
+.feature {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  .feature-copy {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  &:hover svg {
+    animation: bounce 1s both;
+    transform-origin: center bottom;
+  }
+}
+
+.projects {
+  .projects-container {
+    @include grid-up(300px);
+  }
+  .project {
+    img {
+      @include img-width;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.pricing {
+  .pricing-container {
+    @include grid-up(300px);
+  }
+
+  .price {
+    background: $color-white;
+
+    h3 {
+      padding: 1.5rem 0;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      background: $primary-color;
+      display: inline-block;
+    }
+
+    .price-features {
+      padding: 3rem 2rem;
+      li {
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .buy {
+      width: 100%;
+      border-radius: 0;
+      padding: 1.5rem 0;
+      text-align: center;
+      color: $color-white;
+      display: inline-block;
+      background: $secondary-color;
+    }
+  }
+
+  .price-one {
+    li {
+      &:last-child,
+      &:nth-child(4),
+      &:nth-child(3) {
+        color: rgba($color-black, 0.7);
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .price-two {
+    li {
+      &:last-child,
+      &:nth-child(4) {
+        color: rgba($color-black, 0.7);
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  // .price-three {
+  // }
+}
+
+.testimonials {
+  .testimonials-container {
+    @include grid-up(300px);
+  }
+
+  .testimonial {
+    padding: 4rem 2rem;
+    border-radius: 5px;
+    background: $color-white;
+    box-shadow: 0 1.4rem 1.4rem rgba(50, 50, 71, 0.04);
+
+    .testimonial-header {
+      p {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.partners {
+  .partners-container {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    svg {
+      width: 40px;
+    }
+  }
+}
+
+.team {
+  .team-container {
+    @include grid-up(300px);
+  }
+  .member {
+    padding: 4rem 2rem;
+    border-radius: 5px;
+    background: $color-white;
+    box-shadow: 0 1.4rem 1.4rem rgba(50, 50, 71, 0.04);
+
+    // .member-copy {
+    //   margin-top: 1rem;
+    // }
+  }
+}

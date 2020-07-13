@@ -1,0 +1,14 @@
+header {
+  color: $primary-color;
+  padding: 1.89rem 0;
+  background: $secondary-color;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  a {
+    color: inherit;
+    text-transform: uppercase;
+  }
+}

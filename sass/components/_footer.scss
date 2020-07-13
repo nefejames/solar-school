@@ -1,0 +1,52 @@
+footer {
+  padding: 4rem 0;
+  background: $secondary-color;
+
+  * {
+    color: $color-white;
+  }
+
+  .footer-logo {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .footer-section:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .contact-details li {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    svg {
+      margin-right: 1rem;
+    }
+  }
+
+  .links {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+  }
+
+  svg {
+    width: 20px;
+    fill: $color-white;
+  }
+
+  @media screen and (min-width: 750px) {
+    .links {
+      width: 20%;
+    }
+  }
+}
