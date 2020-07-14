@@ -12,69 +12,64 @@
 .testimonials,
 .partners,
 .team {
-  background: rgba($secondary-color, 0.1);
+  // color: $primary-color;
+  background: $bg-color;
 }
 
 .hero {
-  color: white;
-  background-image: linear-gradient(
-      rgba($secondary-color, 0.6),
-      rgba($secondary-color, 0.6)
-    ),
-    url(/assets/images/hero-bg.jpg);
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
 
-  .hero-left {
-    margin-bottom: 3rem;
-
-    svg {
-      width: 120px;
-      animation: roll-in-left 0.6s ease-out both;
-      // -webkit-animation: roll-in-left 0.6s ease-out both;
-    }
+  .hero-container {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
-  * {
-    color: inherit;
+  .hero-left {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+
+    img {
+      @include img-width;
+    }
   }
 
   .hero-buttons {
     display: flex;
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
   }
 
   .demo {
     margin-right: 1rem;
     color: white;
     font-weight: 500;
-    background: $color-black;
+    background: $secondary-color;
   }
 
   .sign {
     font-weight: 500;
-    color: $secondary-color;
+    color: $color-white;
     background: $primary-color;
+  }
+
+  h1 {
+    margin-bottom: 0.6rem;
   }
 
   @media screen and (min-width: 750px) {
     .hero-container {
-      display: flex;
       justify-content: space-between;
       flex-direction: row-reverse;
+      align-items: center;
     }
 
-    .hero-right p {
-      width: 70%;
+    .hero-left {
+      width: 80%;
     }
   }
 }
 
 .about {
-  color: $secondary-color;
-  background: $primary-color;
   p:first-of-type {
     margin-bottom: 1rem;
   }
@@ -84,22 +79,28 @@
   }
 }
 
-.feature {
-  text-align: center;
-  margin-bottom: 4rem;
-
-  .feature-copy {
-    width: 80%;
-    margin: 0 auto;
+.features {
+  .features-container {
+    @include grid-up(300px);
   }
 
-  h3 {
-    margin-bottom: 1rem;
-  }
+  .feature {
+    text-align: center;
+    margin-bottom: 2rem;
 
-  &:hover svg {
-    animation: bounce 1s both;
-    transform-origin: center bottom;
+    .feature-copy {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    &:hover svg {
+      animation: bounce 1s both;
+      transform-origin: center bottom;
+    }
   }
 }
 
@@ -122,18 +123,20 @@
 
   .price {
     background: $color-white;
+    padding: 3.5rem 4rem 4rem;
+    border-radius: $border-radius;
 
     h3 {
-      padding: 1.5rem 0;
       width: 100%;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      font-size: calc(2rem + 0.2vw);
       text-align: center;
-      text-transform: uppercase;
-      background: $primary-color;
+      text-transform: capitalize;
       display: inline-block;
     }
 
     .price-features {
-      padding: 3rem 2rem;
       li {
         text-transform: capitalize;
         margin-bottom: 1rem;
@@ -143,11 +146,13 @@
     .buy {
       width: 100%;
       border-radius: 0;
+      margin-top: 4rem;
+      border-radius: $border-radius;
       padding: 1.5rem 0;
       text-align: center;
       color: $color-white;
       display: inline-block;
-      background: $secondary-color;
+      background: $primary-color;
     }
   }
 
@@ -182,44 +187,58 @@
   }
 
   .testimonial {
-    padding: 4rem 2rem;
-    border-radius: 5px;
-    background: $color-white;
-    box-shadow: 0 1.4rem 1.4rem rgba(50, 50, 71, 0.04);
-
     .testimonial-header {
       p {
         text-transform: capitalize;
       }
     }
   }
+
+  .testimonial-copy {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 4rem 2rem;
+    border-radius: 5px;
+    background: $color-white;
+    box-shadow: 0 1.4rem 1.4rem rgba(50, 50, 71, 0.04);
+    position: relative;
+
+    .quote {
+      width: 25px;
+      align-self: flex-end;
+    }
+  }
+
+  .testionial-person {
+    display: flex;
+    margin-top: 2.4rem;
+
+    h3,
+    p {
+      text-transform: capitalize;
+      font-size: 1.6rem;
+    }
+  }
+
+  svg {
+    width: 45px;
+    margin-right: 2rem;
+  }
 }
 
 .partners {
   .partners-container {
     display: flex;
-    width: 90%;
     justify-content: space-between;
-    margin: 0 auto;
 
     svg {
       width: 40px;
     }
   }
-}
 
-.team {
-  .team-container {
-    @include grid-up(300px);
-  }
-  .member {
-    padding: 4rem 2rem;
-    border-radius: 5px;
-    background: $color-white;
-    box-shadow: 0 1.4rem 1.4rem rgba(50, 50, 71, 0.04);
-
-    // .member-copy {
-    //   margin-top: 1rem;
-    // }
+  @media screen and (min-width: 750px) {
+    .partners-container {
+      width: 40%;
+    }
   }
 }

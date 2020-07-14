@@ -5,18 +5,16 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  text-decoration: none;
-  overflow-x: hidden; }
+  text-decoration: none; }
 
 html {
-  font-size: 62.5%;
-  overflow-x: hidden; }
+  font-size: 62.5%; }
 
 body {
   font-family: "Noto Sans JP", sans-serif; }
 
 h1 {
-  font-size: calc(2.8rem + 0.5vw); }
+  font-size: calc(2.8rem + 1.4vw); }
 
 h2 {
   margin-bottom: 1rem;
@@ -28,9 +26,12 @@ h2 {
 h1,
 h2,
 h3 {
+  color: #06143e;
   text-transform: capitalize; }
 
-p {
+p,
+li {
+  color: rgba(6, 20, 62, 0.9);
   line-height: 1.5; }
 
 p,
@@ -91,7 +92,7 @@ h3 {
 
 footer {
   padding: 4rem 0;
-  background: #00303c; }
+  background: #06143e; }
   footer * {
     color: #fff; }
   footer .footer-logo {
@@ -121,9 +122,9 @@ footer {
       width: 20%; } }
 
 header {
-  color: #fdf667;
+  color: #fff;
   padding: 1.89rem 0;
-  background: #00303c;
+  background: #06143e;
   position: sticky;
   top: 0;
   left: 0;
@@ -143,59 +144,61 @@ header {
 .testimonials,
 .partners,
 .team {
-  background: rgba(0, 48, 60, 0.1); }
+  background: #cdedf6; }
 
 .hero {
-  color: white;
-  background-image: linear-gradient(rgba(0, 48, 60, 0.6), rgba(0, 48, 60, 0.6)), url(/assets/images/hero-bg.jpg);
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center; }
+  .hero .hero-container {
+    display: flex;
+    flex-direction: column-reverse; }
   .hero .hero-left {
+    margin-top: 4rem;
     margin-bottom: 3rem; }
-    .hero .hero-left svg {
-      width: 120px;
-      animation: roll-in-left 0.6s ease-out both; }
-  .hero * {
-    color: inherit; }
+    .hero .hero-left img {
+      width: 100%; }
   .hero .hero-buttons {
     display: flex;
-    margin-top: 1.5rem; }
+    margin-top: 1.8rem; }
   .hero .demo {
     margin-right: 1rem;
     color: white;
     font-weight: 500;
-    background: #000; }
+    background: #089360; }
   .hero .sign {
     font-weight: 500;
-    color: #00303c;
-    background: #fdf667; }
+    color: #fff;
+    background: #06143e; }
+  .hero h1 {
+    margin-bottom: 0.6rem; }
   @media screen and (min-width: 750px) {
     .hero .hero-container {
-      display: flex;
       justify-content: space-between;
-      flex-direction: row-reverse; }
-    .hero .hero-right p {
-      width: 70%; } }
+      flex-direction: row-reverse;
+      align-items: center; }
+    .hero .hero-left {
+      width: 80%; } }
 
-.about {
-  color: #00303c;
-  background: #fdf667; }
-  .about p:first-of-type {
-    margin-bottom: 1rem; }
-  .about .about-copy {
-    margin-bottom: 3rem; }
+.about p:first-of-type {
+  margin-bottom: 1rem; }
 
-.feature {
+.about .about-copy {
+  margin-bottom: 3rem; }
+
+.features .features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem; }
+
+.features .feature {
   text-align: center;
-  margin-bottom: 4rem; }
-  .feature .feature-copy {
+  margin-bottom: 2rem; }
+  .features .feature .feature-copy {
     width: 80%;
     margin: 0 auto; }
-  .feature h3 {
+  .features .feature h3 {
     margin-bottom: 1rem; }
-  .feature:hover svg {
+  .features .feature:hover svg {
     animation: bounce 1s both;
     transform-origin: center bottom; }
 
@@ -214,27 +217,30 @@ header {
   gap: 3rem; }
 
 .pricing .price {
-  background: #fff; }
+  background: #fff;
+  padding: 3.5rem 4rem 4rem;
+  border-radius: 5px; }
   .pricing .price h3 {
-    padding: 1.5rem 0;
     width: 100%;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: calc(2rem + 0.2vw);
     text-align: center;
-    text-transform: uppercase;
-    background: #fdf667;
+    text-transform: capitalize;
     display: inline-block; }
-  .pricing .price .price-features {
-    padding: 3rem 2rem; }
-    .pricing .price .price-features li {
-      text-transform: capitalize;
-      margin-bottom: 1rem; }
+  .pricing .price .price-features li {
+    text-transform: capitalize;
+    margin-bottom: 1rem; }
   .pricing .price .buy {
     width: 100%;
     border-radius: 0;
+    margin-top: 4rem;
+    border-radius: 5px;
     padding: 1.5rem 0;
     text-align: center;
     color: #fff;
     display: inline-block;
-    background: #00303c; }
+    background: #06143e; }
 
 .pricing .price-one li:last-child, .pricing .price-one li:nth-child(4), .pricing .price-one li:nth-child(3) {
   color: rgba(0, 0, 0, 0.7);
@@ -249,29 +255,39 @@ header {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 3rem; }
 
-.testimonials .testimonial {
+.testimonials .testimonial .testimonial-header p {
+  text-transform: capitalize; }
+
+.testimonials .testimonial-copy {
+  display: flex;
+  flex-direction: column-reverse;
   padding: 4rem 2rem;
   border-radius: 5px;
   background: #fff;
-  box-shadow: 0 1.4rem 1.4rem rgba(50, 50, 71, 0.04); }
-  .testimonials .testimonial .testimonial-header p {
-    text-transform: capitalize; }
+  box-shadow: 0 1.4rem 1.4rem rgba(50, 50, 71, 0.04);
+  position: relative; }
+  .testimonials .testimonial-copy .quote {
+    width: 25px;
+    align-self: flex-end; }
+
+.testimonials .testionial-person {
+  display: flex;
+  margin-top: 2.4rem; }
+  .testimonials .testionial-person h3,
+  .testimonials .testionial-person p {
+    text-transform: capitalize;
+    font-size: 1.6rem; }
+
+.testimonials svg {
+  width: 45px;
+  margin-right: 2rem; }
 
 .partners .partners-container {
   display: flex;
-  width: 90%;
-  justify-content: space-between;
-  margin: 0 auto; }
+  justify-content: space-between; }
   .partners .partners-container svg {
     width: 40px; }
 
-.team .team-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 3rem; }
-
-.team .member {
-  padding: 4rem 2rem;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 0 1.4rem 1.4rem rgba(50, 50, 71, 0.04); }
+@media screen and (min-width: 750px) {
+  .partners .partners-container {
+    width: 40%; } }
