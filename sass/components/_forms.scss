@@ -1,0 +1,116 @@
+// .user-form {
+//   padding: 2rem 0;
+// }
+
+.form-layout-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+.form-wrapper {
+  padding: 2rem 0;
+}
+
+.image-box {
+  height: 100vh;
+  display: none;
+}
+
+//signup image box
+.signup {
+  background: url("../../assets/images/form-images/bg-one.jpg");
+}
+
+//login image box
+.login {
+  background: url("../../assets/images/form-images/bg-two.jpg");
+}
+
+//forgot image box
+.forgot {
+  background: url("../../assets/images/form-images/bg-three.jpg");
+}
+
+.form-copy {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    color: $primary-color;
+  }
+
+  p {
+    font-size: 2rem;
+    color: rgba($primary-color, 0.8);
+  }
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 2rem;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: rgba($primary-color, 0.8);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+input {
+  border-radius: 5px;
+  color: $primary-color;
+  padding: 1em;
+  font-size: 1.5rem;
+  border: 1px solid grey;
+}
+
+input:focus {
+  border: 1px solid $primary-color;
+}
+
+input[type="button"] {
+  color: white;
+  border: none;
+  width: 100%;
+  text-transform: capitalize;
+  background: $primary-color;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.form-footer {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+
+  .have-acct {
+    color: rgba($primary-color, 0.8);
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+
+  .image-box {
+    display: block;
+    width: 50%;
+    background-size: cover;
+  }
+}
